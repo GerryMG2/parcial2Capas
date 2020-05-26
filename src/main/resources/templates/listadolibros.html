@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Lista de Estudiantes</h1>
+
+<table>
+	<thead>
+		<th>
+			Titulo
+		</th>
+		<th>
+			Autor
+		</th>
+		<th>
+		ISBN
+		</th>
+		<th>
+			Categoria
+		</th>
+		<th>
+			fecha
+		</th>
+		
+	</thead>
+	
+	<th:block th:each="contr, row: ${listalibros}">
+	
+	<tr>
+		<th th:text=${contr.lib.getTitulo()} />
+	
+		<th th:text=${contr.lib.getAutor()} />
+		<th th:text=${contr.lib.getIsbn()} />
+	
+		<th th:text="${contr.categoria}">
+
+		<th th:text=${contr.lib.getFecha()} />
+
+		
+	</tr>
+		</th:block>
+
+</table>
+
+<a href="/index"> menu</a>
+
+</body>
+</html>
